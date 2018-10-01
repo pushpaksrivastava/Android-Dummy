@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    tools:context="com.app.talkingcard.WordActivity">
+    <ImageButton
+        android:id="@+id/btn_menu_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:onClick="onClose"
+        android:src="@mipmap/icn_letter_back"/>
+
+    <ImageButton
+        android:id="@+id/btn_menu_read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:layout_alignParentRight="true"
+        android:onClick="onRead"
+        android:src="@mipmap/icn_letter_read"/>
+
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/interstitial_ad_unit_id"
+        >
+    </com.google.android.gms.ads.AdView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_buttons"
+        android:layout_above="@+id/adView"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:onClick="onPrev"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icn_arrow_prev"/>
+
+        <ImageButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="onNext"
+            android:src="@mipmap/icn_arrow_next"/>
+        <Button
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/large_btn_bg"
+            android:drawableLeft="@mipmap/icn_menu_letter"
+            android:text="Alphabet Card"
+            android:onClick="onClose"
+            android:gravity="center_vertical|left"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn_menu_close"
+        android:layout_margin="12dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_linear"
+        android:layout_above="@+id/bottom_buttons">
+        <ImageView
+            android:id="@+id/image_word"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:onClick="onRead"
+            />
+        <TextView
+            android:id="@+id/text_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apple"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
